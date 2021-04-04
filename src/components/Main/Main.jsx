@@ -1,24 +1,27 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Card, CardHeader, CardContent, Typography, Grid, Divider} from '@material-ui/core';
 import useStyles from './styles';
+import {ExpenseTracker} from '../../context/context';
 
 import Form from './Form/Form';
 import List from './List/List';
+import InfoCard from '../Infocard';
 
 const Main = () => {
   const classes= useStyles();
+  const {balance} = useContext(ExpenseTracker);
   return (
     <Card className={classes.root}>
-      <CardHeader title="Track It" subheader="Powered by Speechly" />
-      <CardContent>
-        <Typography align='center' variant='h5'>Total Balance: Rs. 100</Typography>
+      <CardHeader style={{color: '#03045e', backgroundColor: '#caf0f8'}} title="Track It" subheader="Powered by Speechly" />
+      <CardContent className={classes.cardContent}>
+        <Typography style={{marginTop: '10px'}} align='center' variant='h5'>Total Balance: Rs.{balance}</Typography>
         <Typography variant="subtitle1" style={{lineHeight: '1.5em', marginTop: '20px'}}>
-          Try Saying: Add income of Rs. 100 in category travel
+          <InfoCard />
         </Typography>
-        <Divider />
+        <Divider className={classes.divider}/>
         <Form />
       </CardContent>
-      <CardContent className={classes.CardContent}>
+      <CardContent className={classes.cardContent}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <List />
