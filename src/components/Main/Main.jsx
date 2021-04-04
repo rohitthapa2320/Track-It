@@ -9,11 +9,11 @@ const Main = () => {
   const classes= useStyles();
   return (
     <Card className={classes.root}>
-      <CardHeader title="Expense Tracker" subheader="Powered by Speechly" />
+      <CardHeader title="Track It" subheader="Powered by Speechly" />
       <CardContent>
-        <Typography align='center' variant='h5'>Total Balance: $100</Typography>
+        <Typography align='center' variant='h5'>Total Balance: Rs. 100</Typography>
         <Typography variant="subtitle1" style={{lineHeight: '1.5em', marginTop: '20px'}}>
-          Try Saying: Add income of $100 in category travel
+          Try Saying: Add income of Rs. 100 in category travel
         </Typography>
         <Divider />
         <Form />
